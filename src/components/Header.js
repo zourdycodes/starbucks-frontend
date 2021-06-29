@@ -5,10 +5,12 @@ import * as ROUTES from "../constants/routes";
 import { FindStore } from "./FindStore";
 import { Example } from "../animations/Example";
 import { SignInButton, SignUpButton, Logout } from ".";
+import { selectUser } from "../features/userSlice";
+import { useSelector } from "react-redux";
 
-export const Header = () => {
+export const Header = ({ menuPage }) => {
   //todo => back here
-  const user = false;
+  const user = useSelector(selectUser);
 
   return (
     <div className="header">
