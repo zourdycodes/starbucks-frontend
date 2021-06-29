@@ -1,9 +1,9 @@
 import React from "react";
 import "./styles/App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Header } from "./components/Header";
-import { HomeScreen, Footer } from "./screens";
-
+import { Header, Footer } from "./components";
+import { HomeScreen } from "./screens";
+import * as ROUTES from "./constants/routes";
 import { Fade } from "react-awesome-reveal";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <div className="app">
       <Router>
         <Switch>
-          <Route exact path="/">
+          <Route exact path={ROUTES.HOME}>
             <Header />
             <HomeScreen />
             <Fade>
