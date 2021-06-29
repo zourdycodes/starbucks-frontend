@@ -2,8 +2,13 @@ import React from "react";
 import "../styles/Header.css";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../constants/routes";
+import { FindStore } from "./FindStore";
+import { Example } from "../animations/Example";
+import { SignInButton, SignUpButton, Logout } from ".";
 
 export const Header = () => {
+  //todo => back here
+  const user = true;
   return (
     <div className="header">
       <div className="header__left">
@@ -16,10 +21,31 @@ export const Header = () => {
         <Link to={ROUTES.MENU} className="header__link">
           Menu
         </Link>
-        <Link className="header__link">Rewards</Link>
-        <Link className="header__link">Gift Cards</Link>
+        <Link to={ROUTES.HOME} className="header__link">
+          Rewards
+        </Link>
+        <Link to={ROUTES.HOME} className="header__link">
+          Gift Cards
+        </Link>
       </div>
-      <div className="header__right"></div>
+      <div className="header__right">
+        <Example />
+        <FindStore />
+        {!user ? (
+          <>
+            <Link to={ROUTES.SIGN_IN}>
+              <SignInButton />
+            </Link>
+            <Link to={ROUTES.CREATE_ACCOUNT}>
+              <SignUpButton />
+            </Link>
+          </>
+        ) : (
+          <div className="header__logout">
+            <Logout />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
