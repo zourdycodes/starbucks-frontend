@@ -8,7 +8,8 @@ import { SignInButton, SignUpButton, Logout } from ".";
 
 export const Header = () => {
   //todo => back here
-  const user = true;
+  const user = false;
+
   return (
     <div className="header">
       <div className="header__left">

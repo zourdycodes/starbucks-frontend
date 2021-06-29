@@ -5,3 +5,6 @@ export { SignUpButton } from "./SignUpButton";
 export { SignInButton } from "./SignInButton";
 export { FindStore } from "./FindStore";
 export { Logout } from "./Logout";
+export { Info } from "./Info";
+export { Heading } from "./Heading";
+export { Featured } from "./Featured";
