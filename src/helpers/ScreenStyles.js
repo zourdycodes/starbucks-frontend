@@ -75,3 +75,86 @@ export const CategoryItems = styled.div`
   padding-top: 20px;
   padding-right: 20px;
 `;
+
+//warn => SignUP STYLES
+
+export const SignupContainer = styled.div`
+  display: grid;
+  place-items: center;
+  gap: 40px;
+
+  @media (max-width: 425px) {
+    gap: 30px;
+  }
+`;
+
+export const SignupHeader = styled.div`
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.06),
+    0 0 2px rgba(0, 0, 0, 0.07);
+  width: 100%;
+  height: 101px;
+  display: flex;
+  align-items: center;
+
+  > a > img {
+    object-fit: contain;
+    height: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+`;
+
+export const Heading = styled.h1`
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 800;
+  font-size: 28px;
+
+  @media (max-width: 425px) {
+    margin-right: auto;
+    padding: 0 20px;
+    font-size: 24px;
+  }
+`;
+
+export const SignupRewards = styled.div`
+  text-align: center;
+
+  > h4 {
+    color: rgba(0, 0, 0, 0.56);
+    letter-spacing: 1.4px;
+    font-weight: 800;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  > p {
+    color: rgba(0, 0, 0, 0.56);
+    line-height: 1.5;
+    max-width: 500px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  > p > a {
+    color: rgba(0, 0, 0, 0.56);
+    text-decoration: underline;
+  }
+
+  > p > a:hover {
+    text-decoration: none;
+  }
+
+  @media (max-width: 425px) {
+    text-align: left;
+    padding: 0 20px;
+
+    > h4 {
+      display: none;
+    }
+
+    > p {
+      font-size: 13px;
+    }
+  }
+`;
