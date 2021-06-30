@@ -13,7 +13,7 @@ export const Header = ({ menuPage }) => {
   const user = useSelector(selectUser);
 
   return (
-    <div className="header">
+    <div className={`header ${menuPage && `header__menuPage`}`}>
       <div className="header__left">
         <Link className="header__logo" to={ROUTES.HOME}>
           <img
@@ -45,7 +45,7 @@ export const Header = ({ menuPage }) => {
           </>
         ) : (
           <div className="header__logout">
-            <Logout />
+            {menuPage ? <Logout /> : <Link to={ROUTES.MENU}>Order Now</Link>}
           </div>
         )}
       </div>

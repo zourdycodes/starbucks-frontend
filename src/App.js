@@ -1,12 +1,14 @@
 import React from "react";
-import "./styles/App.css";
+import { Fade } from "react-awesome-reveal";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import "./styles/App.css";
 import { Header, Footer } from "./components";
 import { HomeScreen } from "./screens";
 import * as ROUTES from "./constants/routes";
-import { Fade } from "react-awesome-reveal";
+import { login, logout, selectUser } from "./features/userSlice";
 
-function App() {
+const App = () => {
   return (
     <div className="app">
       <Router>
@@ -22,6 +24,6 @@ function App() {
       </Router>
     </div>
   );
-}
+};
 
 export default App;

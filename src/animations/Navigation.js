@@ -9,6 +9,8 @@ import {
   Logout,
 } from "../components";
 import * as ROUTES from "../constants/routes";
+import { selectUser } from "../features/userSlice";
+import { useSelector } from "react-redux";
 
 const variants = {
   open: {
@@ -37,6 +39,7 @@ const variants2 = {
 };
 
 export const Navigation = ({ toggle }) => {
+  const user = useSelector(selectUser);
   const [showMenuCategories, setShowMenuCaategories] = React.useState(false);
   return (
     <>
@@ -96,10 +99,14 @@ export const Navigation = ({ toggle }) => {
           <MenuLink link="Gift Cards" />
           <motion.hr variants={variants2} />
           <motion.div className="navigation__buttons" variants={variants2}>
-            <>
-              <SignInButton />
-              <SignUpButton />
-            </>
+            {!user ? (
+              <>
+                <SignInButton />
+                <SignUpButton />
+              </>
+            ) : (
+              <Logout />
+            )}
           </motion.div>
 
           <motion.div variants={variants2}>
