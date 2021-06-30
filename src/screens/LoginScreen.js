@@ -1,9 +1,9 @@
 import { TextField } from "@material-ui/core";
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import CloseIcon from "@material-ui/icons/Close";
-import ReportProblemRoundedIcon from "@material-ui/icons/ReportProblemRounded";
+// import CloseIcon from "@material-ui/icons/Close";
+// import ReportProblemRoundedIcon from "@material-ui/icons/ReportProblemRounded";
 import VisibilityOffOutlinedIcon from "@material-ui/icons/VisibilityOffOutlined";
 import VisibilityOutlinedIcon from "@material-ui/icons/VisibilityOutlined";
 import { auth } from "../libs/firebase";
@@ -13,7 +13,7 @@ import { FormSubmit, FooterSecondary } from "../components";
 import "../styles/LoginScreen.css";
 
 export const LoginScreen = () => {
-  const { register, handleSubmit, errors } = useForm();
+  // const { register, handleSubmit, errors } = useForm();
   const [passwordShown, setPasswordShown] = useState(false);
   const dispatch = useDispatch();
 
@@ -48,7 +48,7 @@ export const LoginScreen = () => {
         </div>
       </div>
       <div className="loginScreen__right">
-        <form onSubmit={handleSubmit(handleLogin)}>
+        <form onSubmit={handleLogin}>
           <div className="loginScreen__inputContainer">
             <TextField
               name="email"
@@ -59,18 +59,18 @@ export const LoginScreen = () => {
               }}
               InputProps={{ style: { fontWeight: "800" } }}
               className="loginScreen__input"
-              inputRef={register({ required: true })}
+              // inputRef={register({ required: true })}
             />
-            {errors.email && (
-              <div className="loginScreen__error">
-                <CloseIcon fontSize="small" />
-                <span>Enter an email.</span>
-                <ReportProblemRoundedIcon
-                  fontSize="small"
-                  className="loginScreen__reportIcon"
-                />
-              </div>
-            )}
+            {/* {errors.email && ( */}
+            {/* <div className="loginScreen__error">
+              <CloseIcon fontSize="small" />
+              <span>Enter an email.</span>
+              <ReportProblemRoundedIcon
+                fontSize="small"
+                className="loginScreen__reportIcon"
+              />
+            </div> */}
+            {/* )} */}
           </div>
           <div className="loginScreen__inputContainer">
             <TextField
@@ -82,7 +82,7 @@ export const LoginScreen = () => {
               }}
               InputProps={{ style: { fontWeight: "800" } }}
               className="loginScreen__input"
-              inputRef={register({ required: true })}
+              // inputRef={register({ required: true })}
             />
             {passwordShown ? (
               <VisibilityOutlinedIcon
@@ -95,16 +95,16 @@ export const LoginScreen = () => {
                 className="loginScreen__visibilityIcon"
               />
             )}
-            {errors.password && (
-              <div className="loginScreen__error">
-                <CloseIcon fontSize="small" />
-                <span>Enter an password.</span>
-                <ReportProblemRoundedIcon
-                  fontSize="small"
-                  className="loginScreen__reportIcon"
-                />
-              </div>
-            )}
+            {/* {errors.password && ( */}
+            {/* <div className="loginScreen__error">
+              <CloseIcon fontSize="small" />
+              <span>Enter an password.</span>
+              <ReportProblemRoundedIcon
+                fontSize="small"
+                className="loginScreen__reportIcon"
+              />
+            </div> */}
+            {/* )} */}
           </div>
           <div className="loginScreen__resetLinks">
             <Link>Forgot your username?</Link>

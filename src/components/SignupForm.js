@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 import { FormSubmit } from "./FormSubmit";
-import CloseIcon from "@material-ui/icons/Close";
-import ReportProblemRoundedIcon from "@material-ui/icons/ReportProblemRounded";
+// import CloseIcon from "@material-ui/icons/Close";
+// import ReportProblemRoundedIcon from "@material-ui/icons/ReportProblemRounded";
 import VisibilityOffOutlinedIcon from "@material-ui/icons/VisibilityOffOutlined";
 import VisibilityOutlinedIcon from "@material-ui/icons/VisibilityOutlined";
 import { TextField } from "@material-ui/core";
@@ -13,8 +13,10 @@ import { useHistory } from "react-router";
 import "../styles/SignupForm.css";
 import * as ROUTES from "../constants/routes";
 
+//todo => back here again => need REFACTOR
+
 export const SignupForm = () => {
-  const { register, handleSubmit, errors } = useForm();
+  // const { register, handleSubmit, errors } = useForm();
   const [passwordShown, setPasswordShown] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -44,7 +46,7 @@ export const SignupForm = () => {
   return (
     <div className="signupForm">
       <div className="signupForm__container">
-        <form onSubmit={handleSubmit(onSubmit)} className="signupForm__form">
+        <form onSubmit={onSubmit} className="signupForm__form">
           <h4 className="signupForm__section">Personal Information</h4>
           <div className="signupForm__inputContainer">
             <TextField
@@ -56,9 +58,9 @@ export const SignupForm = () => {
               }}
               InputProps={{ style: { fontWeight: "800" } }}
               className="signupForm__input"
-              inputRef={register({ required: true })}
+              // inputRef={register({ required: true })}
             />
-            {errors.fName && (
+            {/* {errors.fName && (
               <div className="signupForm__error">
                 <CloseIcon fontSize="small" />
                 <span>Enter your first name.</span>
@@ -67,7 +69,7 @@ export const SignupForm = () => {
                   className="signupForm__reportIcon"
                 />
               </div>
-            )}
+            )} */}
           </div>
 
           <div className="signupForm__inputContainer">
@@ -80,9 +82,9 @@ export const SignupForm = () => {
               }}
               InputProps={{ style: { fontWeight: "800" } }}
               className="signupForm__input"
-              inputRef={register({ required: true })}
+              // inputRef={register({ required: true })}
             />
-            {errors.lName && (
+            {/* {errors.lName && (
               <div className="signupForm__error">
                 <CloseIcon fontSize="small" />
                 <span>Enter your last name.</span>
@@ -91,7 +93,7 @@ export const SignupForm = () => {
                   className="signupForm__reportIcon"
                 />
               </div>
-            )}
+            )} */}
           </div>
           <h4 className="signupForm__section">Account Security</h4>
           <div className="signupForm__inputContainer">
@@ -104,9 +106,9 @@ export const SignupForm = () => {
               }}
               InputProps={{ style: { fontWeight: "800" } }}
               className="signupForm__input"
-              inputRef={register({ required: true })}
+              // inputRef={register({ required: true })}
             />
-            {errors.email && (
+            {/* {errors.email && (
               <div className="signupForm__error">
                 <CloseIcon fontSize="small" />
                 <span>Enter an email.</span>
@@ -115,7 +117,7 @@ export const SignupForm = () => {
                   className="signupForm__reportIcon"
                 />
               </div>
-            )}
+            )} */}
           </div>
 
           <div className="signupForm__inputContainer">
@@ -128,7 +130,7 @@ export const SignupForm = () => {
               }}
               InputProps={{ style: { fontWeight: "800" } }}
               className="signupForm__input"
-              inputRef={register({ required: true })}
+              // inputRef={register({ required: true })}
             />
             {passwordShown ? (
               <VisibilityOutlinedIcon
@@ -141,7 +143,7 @@ export const SignupForm = () => {
                 className="signupForm__visibilityIcon"
               />
             )}
-            {errors.password && (
+            {/* {errors.password && (
               <div className="signupForm__error">
                 <CloseIcon fontSize="small" />
                 <span>Enter an password.</span>
@@ -150,7 +152,7 @@ export const SignupForm = () => {
                   className="login__reportIcon"
                 />
               </div>
-            )}
+            )} */}
           </div>
           <h4 className="signupForm__rewards">
             COLLECT MORE STARS & EARN REWARDS
